@@ -1,11 +1,12 @@
 # FlightTicketReservation
 
-# DB link: http://localhost:8080/h2-console/login.jsp
+#Following queries and mutations are tested at http://localhost:8080/graphiql
+
+#DB link: http://localhost:8080/h2-console/login.jsp
 #JDBC URL: jdbc:h2:mem:testdb
 #User Name: sa
 #Password: (empty)
 
-#Following queries are tested at http://localhost:8080/graphiql
 ################################################---Ticket---###########################################################
 
 query{
