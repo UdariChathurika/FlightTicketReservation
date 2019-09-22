@@ -1,0 +1,16 @@
+type Meal {
+    id: ID!
+    type: String!
+}
+
+extend type Query {
+    findAllMeals: [Meal]!
+    countMeals: Long!
+}
+
+extend type Mutation {
+    newMeal(type: String!) : Meal!
+    cancelMeal(id: ID!): Boolean
+    updateMealType(type:String!,id:Long!): Meal!
+
+}

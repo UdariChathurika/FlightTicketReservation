@@ -1,0 +1,18 @@
+type UnderAgeChildren {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    age: Int!
+    ticket: Ticket
+}
+
+extend type Query {
+    findAllUnderAgeChildren: [UnderAgeChildren]!
+    countUnderAgeChildren: Long!
+}
+
+extend type Mutation {
+    newUnderAgeChildren(firstName: String!,lastName: String!,age: Int!,id:ID!) : UnderAgeChildren!
+    cancelUnderAgeChildren(id: ID!): Boolean
+    updateUnderAgeChildrenFirstName(firstName: String!,id: ID!): UnderAgeChildren!
+}

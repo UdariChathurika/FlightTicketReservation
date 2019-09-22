@@ -1,0 +1,16 @@
+type Pet {
+    id: ID!
+    type: String!
+    ticket: Ticket!
+}
+
+extend type Query {
+    findAllPets: [Pet]!
+    countPets: Long!
+}
+
+extend type Mutation {
+    newPet(type: String!,ticket: ID!) : Pet!
+    cancelPet(id: ID!): Boolean
+    updatePetType(type: String!,id: ID!): Pet!
+}

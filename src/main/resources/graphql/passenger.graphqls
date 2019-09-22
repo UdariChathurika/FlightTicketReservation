@@ -1,0 +1,18 @@
+type Passenger {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    nic: String!
+    email: String!
+}
+
+extend type Query {
+    findAllPassengers: [Passenger]!
+    countPassengers: Long!
+}
+
+extend type Mutation {
+    newPassenger(firstName: String!,lastName: String!,nic: String!,email: String!) : Passenger!
+    cancelPassenger(id: ID!): Boolean
+    updatePassengerFirstName(firstName: String!,id: Long!): Passenger!
+}

@@ -1,0 +1,38 @@
+type Ticket {
+    id: ID!
+    description: String!
+    price: Int!
+    ticketDate: String!
+    flights: [Flight]
+    passenger:Passenger
+    meal:Meal
+}
+
+input InputFlight{
+    number: String!
+    departureDate: String!
+    fromLocation: String!
+    toLocation: String!
+}
+
+input InputPassenger{
+    firstName: String!
+    lastName: String!
+    nic: String!
+    email: String!
+}
+
+input InputMeal{
+    type:String!
+}
+
+extend type Query {
+    findAllTickets: [Ticket]!
+    countTickets: Long!
+}
+
+extend type Mutation {
+    newTicket(id: ID!,description: String!,price: Int!,ticketDate: String!, flights: [InputFlight], passenger:InputPassenger, meal:InputMeal) : Ticket!
+    cancelTicket(id: ID!): Boolean
+    updateTicketDescription(description: String!,id: ID!): Ticket!
+}

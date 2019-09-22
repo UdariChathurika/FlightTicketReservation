@@ -1,0 +1,17 @@
+type Luggage {
+    id: ID!
+    weight: String!
+    ticket: Ticket!
+}
+
+extend type Query {
+    findAllLuggages: [Luggage]!
+    countLuggages: Long!
+}
+
+extend type Mutation {
+    newLuggage(weight: String!,ticket: ID!): Luggage!
+    cancelLuggage(id: ID!): Boolean
+    updateLuggageWeight(weight:String!,id:ID!): Luggage!
+
+}

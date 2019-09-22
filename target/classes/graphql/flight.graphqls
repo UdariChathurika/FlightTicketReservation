@@ -1,0 +1,18 @@
+type Flight {
+    id: ID!
+    number: String!
+    departureDate: String!
+    fromLocation: String!
+    toLocation: String!
+}
+
+type Query {
+    findAllFlights: [Flight]!
+    countFlights: Long!
+}
+
+type Mutation {
+    newFlight(number: String!,departureDate: String!,fromLocation: String!,toLocation: String!) : Flight!
+    cancelFlight(id: ID!): Boolean
+    updateFlightNumber(number: String!,id: ID!): Flight!
+}
